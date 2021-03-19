@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chuối đối xứng</title>
+</head>
+<body>
+    <script>
+        let str1=prompt('Nhập từ cần kiểm tra')
+        function checkString(str){
+            console.log(str);
+            console.log(str.length);
+            if (str.length %2 !==0){
+                alert ('chuỗi không phải là chuỗi gi gi do')
+                return
+            }
+            if(str.length>0){
+                // let temp=str[i]
+                // str[i]=str[str.length-1-i]
+                // str[str.length-1-i]=temp
+
+                if(str[0]!==str[str.length-1]){
+                    alert ('chuỗi không phải là chuỗi gi đi đó')
+                    return
+                }else{
+                    let str2 = str.slice(1,str.length-1);
+                    if (str2.length==0){
+                        alert ('chuỗi  là chuỗi Palindrome');
+                        return;
+                    }else{
+                        checkString(str2);
+                    }
+                }
+
+
+            }else {
+               return
+            }
+
+
+        }
+        checkString(str1);
+
+
+
+    </script>
+
+</body>
+</html>
